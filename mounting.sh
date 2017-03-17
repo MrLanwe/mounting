@@ -23,5 +23,4 @@ Example:
 
 Mount /dev/sdc1 to /media/pendrive
 "
-
 fi
