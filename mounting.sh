@@ -26,6 +26,7 @@ Example mounting [-m]:
 
 Example umounting [-u]:
 ./mounting.sh -u 0 pendrive
-there always must be 3 arguments, 0 is used as empty secound argument
+
+Except when using [-l] option there always must be 3 arguments, 0 is used as empty secound argument
 "
 fi
