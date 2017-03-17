@@ -6,21 +6,26 @@
 
 if [ $1 == "-m" ]; then
     sudo mkdir /media/$3
-    sudo mount /dev/sd$2 /media/$3
-    echo ls /media/$3
+    sudo mount /dev/$2 /media/$3
+    echo ls /media
 elif [ $1 == "-u" ]; then
     sudo umount /media/$3
     echo "unmounting complete"
+elif [ $1 == "-l" ]; then
+    sudo fdisk -l
 elif [ $1 == "-h" ]; then
     printf "\nSyntax: ./mounting.sh [option] [partition] [folder name]
 Options:
+-l		list all disks and partitions using fdisk
 -m              mount partition
 -u              unmount partition
--h, --help      display this help text
+-h      	display this help text
 
-Example:
-./mounting.sh -m c1 pendrive
+Example mounting [-m]:
+./mounting.sh -m sdc1 pendrive
 
-Mount /dev/sdc1 to /media/pendrive
+Example umounting [-u]:
+./mounting.sh -u 0 pendrive
+there always must be 3 arguments, 0 is used as empty secound argument
 "
 fi
